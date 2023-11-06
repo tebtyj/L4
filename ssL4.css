@@ -1,0 +1,219 @@
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    column-gap: 100px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    display: flex;
+}
+
+p {
+    margin-left: 100px;
+    margin-top: 10px;
+    color: #fff;
+    display: flex;
+}
+
+/* yuejun */
+.myshape {
+    width: 170px;
+    height: 160px;
+    background-color: #fff;
+}
+
+.myshape::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: absolute;
+
+    background-color: #fff;
+    transform: rotate(60deg);
+}
+
+.myshape::after {
+    content: '';
+    width: inherit;
+    height: inherit;
+    position: absolute;
+
+    background-color: #fff;
+    transform: rotate(-60deg);
+}
+
+.myshape:hover {
+    transition: background-color 0.5s ease;
+    transform: scale(1.2);
+    background-color:teal;
+}
+
+.myshape:hover::after {
+    content: '';
+    transition: background-color 0.5s ease;
+    transform: scale(1.2);
+    background-color: teal;
+    transform: rotate(60deg);
+}
+
+
+
+/* XinYing */
+.circle {
+    width: 170px;
+    height: 170px;
+    background-image: linear-gradient(blue, pink);
+    border-radius: 50%;
+    transition: all 0.7s ease;
+}
+
+.circle:hover {
+    width: 170px;
+    height: 170px;
+    border-radius: 0;
+    transform: rotate(180deg);
+}
+
+
+/* Marcus */
+@keyframes moveCloud {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.cloud {
+    position: relative;
+    top: 50px;
+    width: 320px;
+    height: 100px;
+    background: grey;
+    border-radius: 100px;
+    animation: moveCloud 10s linear infinite;
+}
+
+.cloud:hover {
+    background-color: skyblue;
+    width: 480px;
+    height: 220px;
+    border-radius: 100px;
+}
+
+.cloud:hover::before {
+    background: skyblue;
+    width: 210px;
+    height: 210px;
+
+    box-shadow: 90px 0 0 30px skyblue;
+}
+
+.cloud::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 40px;
+    width: 110px;
+    height: 110px;
+    background: grey;
+    border-radius: 50%;
+    box-shadow: 90px 0 0 30px grey;
+}
+
+
+/* Gerlyn */
+.shape {
+    width: 170px;
+    height: 170px;
+    background-color: blue;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transition: all 2s;
+}
+ 
+ 
+@keyframes toSquare {
+    0% {
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        background-color: blue;
+    }
+    100% {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+        background-color: red;
+    }
+}
+ 
+.shape {
+    animation: toSquare 2s linear forwards;
+}
+
+/* yik kan */
+.heart {
+    position: relative;
+    height: 160px;
+    width: 100px;
+    background: pink;
+    border-radius: 200px 200px 0 0;
+    transform: rotate(45deg);
+    left: 64px;
+    top: -8px;
+}
+ 
+.heart::before {
+    content: "";
+    position: absolute;
+    background: pink;
+    height: 160px;
+    width: 100px;
+    transform: rotate(-90deg);
+    border-radius: 200px 200px 0 0;
+    left: -30px;
+    top: 30px;
+}
+ 
+.heart:hover {
+    animation: transition 2s linear forwards;
+}
+ 
+.heart:hover::before{
+    animation: transition 2s linear forwards;
+}
+ 
+@keyframes transition {
+    0% {
+        border-radius: 200px 200px 0 0;
+    }
+ 
+    60%{
+        width: 125px;
+        height: 125px;
+    }
+ 
+    80%{
+        background: blue;
+        top: 0;
+        left: 0;
+        width: 110px;
+        height: 110px;
+        border-radius: 200px 200px 200px 200px;
+       
+    }
+    100% {
+        border-radius: 200px 200px 200px 200px;
+        background: blue;
+        width: 100px;
+        height: 100px;
+        top: 0;
+        left: 0;
+    }
+}
